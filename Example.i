@@ -1,5 +1,5 @@
 %module TerrainMesh
-%include <std_string.i>
+
 %{
 #include "example.h"
 %}
