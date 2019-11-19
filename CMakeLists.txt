@@ -32,9 +32,9 @@ swig_add_library(${PROJECT_NAME}
   TYPE STATIC
   LANGUAGE go
   OUTPUT_DIR ${OUTPUT_DIR}
-  SOURCES Example.i ${SRC} ${HEADERS}
+  SOURCES Example.i ${SRC}
   )
-target_include_directories(${PROJECT_NAME} PUBLIC include/)
+target_include_directories(${PROJECT_NAME} PUBLIC "include/")
 set_property(TARGET ${PROJECT_NAME} PROPERTY SWIG_COMPILE_OPTIONS -intgosize 64 -cgo)
-# Copy header files to go module. Otherwise, go build/instal will not work
+# Copy header files to go module. Otherwise, go build/install will not work
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy ${HEADERS} ${OUTPUT_DIR}/)  
