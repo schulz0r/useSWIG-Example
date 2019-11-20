@@ -11,6 +11,9 @@ COPY Example.i ./
 COPY CMakeLists.txt ./
 
 WORKDIR /exampleModule/build
-RUN cmake -DOUTPUT_DIR="/go/src/example" .. && make -j
+RUN cmake .. && make -j
+
+# show that wrapper files have been generated
+RUN ls /go/src/example
 
 RUN CGO_ENABLED=1 go build example
