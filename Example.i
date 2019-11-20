@@ -1,4 +1,4 @@
-%module TerrainMesh
+%module Example
 
 %{
 #include "example.h"
